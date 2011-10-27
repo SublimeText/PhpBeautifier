@@ -5,7 +5,7 @@ class PhpBeautifierCommand(sublime_plugin.TextCommand):
     def run(self, edit):
         FILE = self.view.file_name()
         if FILE[-3:] == 'php':
-            PHP_OPTIONS = "-s4 -l 'ArrayNested()' "
+            PHP_OPTIONS = "-s4 -l 'ArrayNested() NewLines(before=switch:while:public:for:foreach:T_CLASS:return:break,after=protected:private)' "
             selection = self.view.sel()[0]
             replaceRegion = selection if len(selection) > 0 else sublime.Region(0, self.view.size())
             res = commands.getoutput("php_beautifier " + PHP_OPTIONS +
