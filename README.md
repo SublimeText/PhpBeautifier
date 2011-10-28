@@ -8,7 +8,7 @@ It uses php beautifier.
 
 ## Installation
 Install php beautifier from pear channel :
-`pear install PHP_Beautifier`
+`sudo pear install --alldeps  channel://pear.php.net/php_beautifier-0.1.15`
 
 Clone or download the files and copy them to your `Packages` folder. You can access it via Preferences -> Browse Packages in sublime text.
 
