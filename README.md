@@ -7,6 +7,10 @@ This is a Sublime Text 2 plugin allowing you to format your PHP code.
 It uses php beautifier.
 
 ## Installation
+Install php-pear and php-cli with your package manager :
+ * php-pear & php5-cli with Debian
+ * php-pear & php with Archlinux
+
 Install php beautifier from pear channel :
 `sudo pear install --alldeps  channel://pear.php.net/php_beautifier-0.1.15`
 
