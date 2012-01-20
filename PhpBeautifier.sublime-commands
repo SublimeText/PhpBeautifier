@@ -1,3 +1,3 @@
 [
-    { "caption": "Format: Php (php_beautifier)", "command": "php_beautifier" }
+    { "caption": "Format: Php", "command": "php_beautifier" }
 ]
