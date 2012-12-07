@@ -1,6 +1,9 @@
-import sublime, sublime_plugin, re, subprocess
-from subprocess import Popen
-from subprocess import PIPE
+import re
+import subprocess
+
+import sublime
+import sublime_plugin
+
 
 class PhpBeautifierCommand(sublime_plugin.TextCommand):
     def run(self, edit):
@@ -11,7 +14,7 @@ class PhpBeautifierCommand(sublime_plugin.TextCommand):
             allFile = sublime.Region(0, self.view.size())
             AllFileText = self.view.substr(allFile).encode('utf-8')
             cmd = "php_beautifier"
-            p = Popen([cmd, indent, "-l", filters, "-f", "-", "-o", "-"], stdin = PIPE, stdout = PIPE, stderr=PIPE)
+            p = subprocess.Popen([cmd, indent, "-l", filters, "-f", "-", "-o", "-"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             stdout, stderr = p.communicate(AllFileText)
             if len(stderr) == 0:
                 self.view.replace(edit, allFile, self.fixup(stdout))
