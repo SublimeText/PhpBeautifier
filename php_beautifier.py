@@ -30,7 +30,7 @@ class PhpBeautifierCommand(sublime_plugin.TextCommand):
         allFile = sublime.Region(0, self.view.size())
         AllFileText = self.view.substr(allFile).encode('utf-8')
 
-        if sys.platform == 'win32':
+        if os.name == 'nt':
             startupinfo = subprocess.STARTUPINFO()
             startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
             startupinfo.wShowWindow = subprocess.SW_HIDE
